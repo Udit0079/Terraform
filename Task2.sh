@@ -10,10 +10,7 @@ gcloud config set project $P_ID
 
 gcloud compute ssh --project=$P_ID --zone=$ZONE $Ins_name
 
-curl "http://metadata.google.internal/computeMetadata/v1/instance/attributes/?recursive=true" \
-    -H "Metadata-Flavor: Google"
+curl "http://metadata.google.internal/computeMetadata/v1/instance/attributes/?recursive=true" -H "Metadata-Flavor: Google"
 exit	
 gcloud compute instances describe $Ins_Name
 gcloud compute project-info describe
-
-
